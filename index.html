@@ -47,39 +47,6 @@
             color: white;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .next-btn {
-            margin-top: 20px;
-            width: 100%;
-        }
-        .keypad button { width: 60px; }
-        p { font-size: 16px; line-height: 1.6; }
-    </style>
-</head>
-<body>
-
-    <audio id="bg-music" src="music.mp3"></audio>
-
-    <div class="card">
-        <!-- Step 1: Passcode -->
-        <div id="page1" class="page active">
-            <h2>🔒 Secret Passcode</h2>
-            <p>Enter passcode to unlock</p>
-            <input type="password" id="passcode" readonly placeholder="****">
-            <div class="keypad">
-                <button onclick="pressKey('1')">1</button>
-                <button onclick="pressKey('2')">2</button>
-                <button onclick="pressKey('3')">3</button><br>
-                <button onclick="pressKey('4')">4</button>
-                <button onclick="pressKey('5')">5</button>
-                <button onclick="pressKey('6')">6</button><br>
-                <button onclick="pressKey('7')">7</button>
-                <button onclick="pressKey('8')">8</button>
-                <button onclick="pressKey('9')">9</button><br>
-                <button onclick="clearCode()">C</button>
-                <button onclick="pressKey('0')">0</button>
-                <button onclick="checkCode()">OK</button>
             </div>
         </div>
 
@@ -127,14 +94,5 @@
             } else {
                 alert("Ghalat Code! Dobara koshish karein.");
                 clearCode();
-            }
-        }
 
-        function nextPage(pageId) {
-            let pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-        }
-    </script>
-</body>
-                    </html>
+        
