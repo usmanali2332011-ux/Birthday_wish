@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #11001c;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.page {
+    display: none;
+    width: 85%;
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 105, 180, 0.3);
+    box-shadow: 0 0 25px rgba(255, 20, 147, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.page.active {
+    display: block;
+}
+
+h2 {
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+.hint {
+    color: #ffd1dc;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#passcode {
+    width: 80%;
+    padding: 12px;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #ff69b4;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    outline: none;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.keypad button {
+    padding: 15px;
+    font-size: 18px;
+    background: rgba(255, 42, 117, 0.8);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.keypad button:active {
+    transform: scale(0.95);
+    background: #ff2a75;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: linear-gradient(45deg, #ff2a75, #ff69b4);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 42, 117, 0.4);
+}
+
+.cake-box {
+    margin: 20px 0;
+}
+
+.note-card {
+    background: rgba(255, 105, 180, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    border: 1px dashed #ff69b4;
+}
+
+.letter {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 18px;
+    border-radius: 12px;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 14px;
+    color: #ffe6f0;
+}
