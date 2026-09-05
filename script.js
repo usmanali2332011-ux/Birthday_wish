@@ -1,4 +1,4 @@
-<script>
+
 let correctCode = "1234"; 
 
 function pressKey(num) { 
@@ -30,4 +30,4 @@ function nextPage(pageId) {
     pages.forEach(page => page.classList.remove('active')); 
     document.getElementById(pageId).classList.add('active'); 
 }
-</script>
+
