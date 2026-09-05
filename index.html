@@ -4,13 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday Wish</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #ffe6e6; padding: 20px; }
+        .page { display: none; }
+        .active { display: block; }
+        .passcode-box { margin: 20px auto; max-width: 300px; }
+        input[type="password"] { font-size: 24px; text-align: center; width: 100%; padding: 10px; margin-bottom: 10px; }
+        .keypad button { font-size: 18px; padding: 15px; margin: 5px; width: 60px; }
+    </style>
 </head>
 <body>
 
-    <!-- Aap ke baqi HTML elements (passcode input, buttons, wagaira) yahan honge -->
+    <!-- Audio Player -->
+    <audio id="bg-music" src="music.mp3"></audio>
+
+    <!-- Page 1: Passcode Screen -->
+    <div id="page1" class="page active">
+        <h2>Enter Passcode</h2>
+        <div class="passcode-box">
+            <input type="password" id="passcode" readonly placeholder="****">
+            <div class="keypad">
+                <button onclick="pressKey('1')">1</button>
+                <button onclick="pressKey('2')">2</button>
+                <button onclick="pressKey('3')">3</button><br>
+                <button onclick="pressKey('4')">4</button>
+                <button onclick="pressKey('5')">5</button>
+                <button onclick="pressKey('6')">6</button><br>
+                <button onclick="pressKey('7')">7</button>
+                <button onclick="pressKey('8')">8</button>
+                <button onclick="pressKey('9')">9</button><br>
+                <button onclick="clearCode()">C</button>
+                <button onclick="pressKey('0')">0</button>
+                <button onclick="checkCode()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Birthday Wish Screen -->
+    <div id="page2" class="page">
+        <h1>🎉 Happy Birthday! 🎂</h1>
+        <p>Wishing you all the happiness in the world!</p>
+    </div>
 
     <script>
-        let correctCode = "1234"; // Yahan apna secret code rakhein
+        let correctCode = "1234";
 
         function pressKey(num) {
             let input = document.getElementById('passcode');
@@ -26,9 +63,7 @@
         function checkCode() {
             let input = document.getElementById('passcode').value;
             if (input === correctCode) {
-                // Music Play karein
-                document.getElementById('bg-music').play();
-                // Agle page par jayein
+                document.getElementById('bg-music').play().catch(e => console.log("Audio play error:", e));
                 nextPage('page2');
             } else {
                 alert("Ghalat Code! Dobara koshish karein.");
