@@ -1,31 +1,46 @@
-let correctCode = "1234"; // Yahan apna secret code rakhein
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wish</title>
+</head>
+<body>
 
-function pressKey(num) {
-    let input = document.getElementById('passcode');
-    if (input.value.length < 4) {
-        input.value += num;
-    }
-}
+    <!-- Aap ke baqi HTML elements (passcode input, buttons, wagaira) yahan honge -->
 
-function clearCode() {
-    document.getElementById('passcode').value = '';
-}
+    <script>
+        let correctCode = "1234"; // Yahan apna secret code rakhein
 
-function checkCode() {
-    let input = document.getElementById('passcode').value;
-    if (input === correctCode) {
-        // Music Play karein
-        document.getElementById('bg-music').play();
-        // Agle page par jayein
-        nextPage('page2');
-    } else {
-        alert("Ghalat Code! Dobara koshish karein.");
-        clearCode();
-    }
-}
+        function pressKey(num) {
+            let input = document.getElementById('passcode');
+            if (input.value.length < 4) {
+                input.value += num;
+            }
+        }
 
-function nextPage(pageId) {
-    let pages = document.querySelectorAll('.page');
-    pages.forEach(page => page.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
-}
+        function clearCode() {
+            document.getElementById('passcode').value = '';
+        }
+
+        function checkCode() {
+            let input = document.getElementById('passcode').value;
+            if (input === correctCode) {
+                // Music Play karein
+                document.getElementById('bg-music').play();
+                // Agle page par jayein
+                nextPage('page2');
+            } else {
+                alert("Ghalat Code! Dobara koshish karein.");
+                clearCode();
+            }
+        }
+
+        function nextPage(pageId) {
+            let pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
